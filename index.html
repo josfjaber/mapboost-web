@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MapBoost AI</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  body {
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: white;
+  }
+
+  .glass {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+
+  .fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 20px #22c55e;
+    transform: scale(1.05);
+  }
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="text-center py-24 px-6">
+  <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text">
+    We Help To Boost Your Map Reviews
+  </h1>
+
+  <p class="text-lg text-gray-300 mb-8">
+    AI-powered growth for your Google Maps business
+  </p>
+
+  <button onclick="startChat()" class="btn-glow bg-green-500 px-8 py-4 rounded-xl font-semibold">
+    Start Free AI Audit
+  </button>
+</section>
+
+<!-- FEATURES -->
+<section class="grid md:grid-cols-3 gap-8 px-6 max-w-6xl mx-auto mb-20">
+
+  <div class="glass p-6 rounded-xl fade-up">
+    <h3 class="text-xl font-bold mb-2">AI Analysis</h3>
+    <p class="text-gray-300">We analyze your Google Maps profile instantly.</p>
+  </div>
+
+  <div class="glass p-6 rounded-xl fade-up">
+    <h3 class="text-xl font-bold mb-2">Review Boost</h3>
+    <p class="text-gray-300">Increase trust with more high-quality reviews.</p>
+  </div>
+
+  <div class="glass p-6 rounded-xl fade-up">
+    <h3 class="text-xl font-bold mb-2">Customer Growth</h3>
+    <p class="text-gray-300">Get more calls and real customers daily.</p>
+  </div>
+
+</section>
+
+<!-- PRICING -->
+<section class="px-6 max-w-6xl mx-auto mb-24">
+
+<h2 class="text-3xl font-bold text-center mb-12">Choose Your Plan</h2>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+  <!-- 49 -->
+  <div class="glass p-6 rounded-xl text-center fade-up">
+    <h3 class="text-xl font-bold">Starter</h3>
+    <p class="text-4xl my-4 text-green-400">$49</p>
+    <p class="text-gray-300 mb-6">50 Reviews + Basic Boost</p>
+    <button onclick="buy('49')" class="btn-glow bg-green-500 px-6 py-3 rounded-lg">
+      Get Started
+    </button>
+  </div>
+
+  <!-- 99 -->
+  <div class="glass p-6 rounded-xl text-center scale-105 border border-green-400 fade-up">
+    <h3 class="text-xl font-bold">Growth</h3>
+    <p class="text-4xl my-4 text-green-400">$99</p>
+    <p class="text-gray-300 mb-6">120 Reviews + Optimization</p>
+    <button onclick="buy('99')" class="btn-glow bg-green-500 px-6 py-3 rounded-lg">
+      Most Popular
+    </button>
+  </div>
+
+  <!-- 149 -->
+  <div class="glass p-6 rounded-xl text-center fade-up">
+    <h3 class="text-xl font-bold">Pro</h3>
+    <p class="text-4xl my-4 text-green-400">$149</p>
+    <p class="text-gray-300 mb-6">250 Reviews + Full Boost</p>
+    <button onclick="buy('149')" class="btn-glow bg-green-500 px-6 py-3 rounded-lg">
+      Go Pro
+    </button>
+  </div>
+
+</div>
+
+</section>
+
+<!-- FAKE AI CHAT POPUP -->
+<div id="chatBox" class="hidden fixed bottom-6 right-6 w-80 glass p-4 rounded-xl">
+  <p class="text-sm text-gray-300">🤖 AI analyzing your business...</p>
+  <p class="mt-2">Your profile can gain +40% more visibility 🚀</p>
+
+  <button onclick="startWhatsApp()" class="mt-4 bg-green-500 w-full py-2 rounded-lg">
+    Continue on WhatsApp
+  </button>
+</div>
+
+<script>
+
+function buy(price) {
+  let message = `Hello, I want the $${price} plan. Can you explain how to start?`;
+  window.location.href = `https://wa.me/967781192302?text=${encodeURIComponent(message)}`;
+}
+
+function startChat() {
+  document.getElementById("chatBox").classList.remove("hidden");
+}
+
+function startWhatsApp() {
+  let msg = "Hello, I want a free audit for my business";
+  window.location.href = `https://wa.me/967781192302?text=${encodeURIComponent(msg)}`;
+}
+
+// animation on scroll
+const elements = document.querySelectorAll('.fade-up');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 50) {
+      el.classList.add('show');
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>
